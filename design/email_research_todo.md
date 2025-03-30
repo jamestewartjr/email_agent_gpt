@@ -34,55 +34,63 @@ Below is a **`todo.md`** document you can use as a master checklist. Each sectio
 
 - [x] **Supabase Project Creation**
   - [x] Create SQL schema for tables
-  - [x] Add appropriate indexes
+  - [x] Add appropriate indexes for common queries
+  - [x] Obtain `SUPABASE_URL` and `SUPABASE_SERVICE_KEY`
 
 - [x] **Local Env Configuration**
-  - [x] In the backend, create a `.env` file with variables:
-    - `SUPABASE_URL`
-    - `SUPABASE_SERVICE_KEY`
-    - (other secrets as needed)
-  - [x] **Do not** commit `.env` to source control.
+  - [x] Create `.env` file with required variables
+  - [x] Set up environment variables loading in Node.js
+  - [x] Configure Supabase client with service role key
+  - [x] Add `.env` to `.gitignore`
 
 - [x] **Database Tables**
   - [x] Create `emails` table with fields:
-    - `id` (UUID, PK)
-    - `sender` (text)
-    - `subject` (text)
-    - `received_at` (timestamp)
-    - `body` (text)
-    - `attachments` (jsonb)
-    - `created_at` (timestamp, default now)
+    - [x] `id` (UUID, PK)
+    - [x] `sender` (text)
+    - [x] `subject` (text)
+    - [x] `received_at` (timestamp)
+    - [x] `body` (text)
+    - [x] `attachments` (jsonb)
+    - [x] `created_at` (timestamp, default now)
   - [x] Create `links` table with fields:
-    - `id` (UUID, PK)
-    - `email_id` (UUID, FK → `emails.id`)
-    - `url` (text)
-    - `anchor_text` (text)
-    - `text_snippet` (text)
-    - `tags` (text[])
-    - `created_at` (timestamp, default now)
+    - [x] `id` (UUID, PK)
+    - [x] `email_id` (UUID, FK → `emails.id`)
+    - [x] `url` (text)
+    - [x] `anchor_text` (text)
+    - [x] `text_snippet` (text)
+    - [x] `tags` (text[])
+    - [x] `created_at` (timestamp, default now)
 
 - [x] **Connectivity Test**
   - [x] Install `@supabase/supabase-js` in the backend
   - [x] Create test file to insert dummy row into `emails`
-  - [ ] Confirm test passes (pending Supabase project setup)
+  - [x] Confirm test passes with proper connection
 
 ---
 
-## 3. Gmail OAuth2 Flow
+## 3. Gmail OAuth2 Flow (Next Steps)
 
 - [ ] **OAuth Setup**
-  - [ ] In Google Cloud Console, create an OAuth 2.0 Client ID (Web application).
-  - [ ] Obtain `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
-  - [ ] Add OAuth consent screen details (for personal usage, dev environment is okay).
+  - [ ] Create Google Cloud Project
+  - [ ] Configure OAuth consent screen
+  - [ ] Create OAuth 2.0 Client ID
+  - [ ] Add authorized redirect URIs
+  - [ ] Store credentials in `.env`:
+    ```
+    GOOGLE_CLIENT_ID=your-client-id
+    GOOGLE_CLIENT_SECRET=your-client-secret
+    GOOGLE_REDIRECT_URI=http://localhost:3000/auth/google/callback
+    ```
 
-- [ ] **Backend Code**
-  - [ ] Install `googleapis` (`npm install googleapis`).
-  - [ ] In Express, create `/auth/google` that redirects to Google's OAuth.
-  - [ ] In Express, create `/auth/google/callback` that exchanges `code` for tokens.
-  - [ ] Log/store the refresh token. (In dev, you might just console.log it and then manually put in `.env`).
-
-- [ ] **Token Validation Test**
-  - [ ] (Optional) Write a test double or partial integration test to confirm the flow.
+- [ ] **Backend Auth Routes**
+  - [ ] Install required packages:
+    ```bash
+    npm install googleapis google-auth-library
+    ```
+  - [ ] Create `/auth/google` endpoint for OAuth initiation
+  - [ ] Create `/auth/google/callback` endpoint for token exchange
+  - [ ] Add token storage/refresh logic
+  - [ ] Add error handling for auth failures
 
 ---
 
