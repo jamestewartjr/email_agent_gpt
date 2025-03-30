@@ -6,26 +6,26 @@ Below is a **`todo.md`** document you can use as a master checklist. Each sectio
 
 ## 1. Environment & Project Setup
 
-- [ ] **Repository Structure**
-  - [ ] Decide if using a monorepo (e.g., Nx, Turborepo) or separate repos for backend and frontend.
-  - [ ] Initialize Git repositories with `.gitignore` ignoring `node_modules`, build outputs, etc.
+- [x] **Repository Structure**
+  - [x] Decide if using a monorepo (e.g., Nx, Turborepo) or separate repos for backend and frontend.
+  - [x] Initialize Git repositories with `.gitignore` ignoring `node_modules`, build outputs, etc.
 
-- [ ] **Backend Project Initialization**
-  - [ ] Create a new Node.js project (`npm init -y`).
-  - [ ] Install Express (`npm install express`).
-  - [ ] Install testing framework (e.g., Jest, `npm install --save-dev jest`).
-  - [ ] Configure `"test": "jest"` in `package.json`.
-  - [ ] Create a simple `app.js` with a health-check endpoint.
-  - [ ] Write `app.test.js` to confirm the health-check endpoint returns 200 OK with `{ status: 'healthy' }`.
+- [x] **Backend Project Initialization**
+  - [x] Create a new Node.js project (`npm init -y`).
+  - [x] Install Express (`npm install express`).
+  - [x] Install testing framework (e.g., Jest, `npm install --save-dev jest`).
+  - [x] Configure `"test": "jest"` in `package.json`.
+  - [x] Create a simple `app.js` with a health-check endpoint.
+  - [x] Write `app.test.js` to confirm the health-check endpoint returns 200 OK with `{ status: 'healthy' }`.
 
-- [ ] **Frontend Project Initialization**
-  - [ ] Create a Next.js app via `npx create-next-app`.
-  - [ ] Verify you can run `npm run dev` and see a starter page.
-  - [ ] On the homepage (`pages/index.js`), display "Hello Email Intelligence Bot" or similar placeholder.
-  - [ ] (Optional) Add linting/formatting (ESLint, Prettier) to enforce code style.
+- [x] **Frontend Project Initialization**
+  - [x] Create a Next.js app via `npx create-next-app`.
+  - [x] Verify you can run `npm run dev` and see a starter page.
+  - [x] On the homepage (`pages/index.js`), display "Hello Email Intelligence Bot" or similar placeholder.
+  - [x] (Optional) Add linting/formatting (ESLint, Prettier) to enforce code style.
 
-- [ ] **Basic Testing Configuration**
-  - [ ] Ensure tests run successfully in the backend (`npm test`).
+- [x] **Basic Testing Configuration**
+  - [x] Ensure tests run successfully in the backend (`npm test`).
   - [ ] (Optional) Set up React Testing Library or Cypress for the Next.js project (can be done later).
 
 ---
@@ -77,7 +77,7 @@ Below is a **`todo.md`** document you can use as a master checklist. Each sectio
 
 - [ ] **Backend Code**
   - [ ] Install `googleapis` (`npm install googleapis`).
-  - [ ] In Express, create `/auth/google` that redirects to Google’s OAuth.
+  - [ ] In Express, create `/auth/google` that redirects to Google's OAuth.
   - [ ] In Express, create `/auth/google/callback` that exchanges `code` for tokens.
   - [ ] Log/store the refresh token. (In dev, you might just console.log it and then manually put in `.env`).
 
