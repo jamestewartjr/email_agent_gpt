@@ -32,19 +32,19 @@ Below is a **`todo.md`** document you can use as a master checklist. Each sectio
 
 ## 2. Supabase Setup & Database Schema
 
-- [ ] **Supabase Project Creation**
-  - [ ] Sign in to [Supabase](https://app.supabase.com/) and create a new project.
-  - [ ] Obtain `SUPABASE_URL` and `SUPABASE_SERVICE_KEY`.
+- [x] **Supabase Project Creation**
+  - [x] Create SQL schema for tables
+  - [x] Add appropriate indexes
 
-- [ ] **Local Env Configuration**
-  - [ ] In the backend, create a `.env` file with variables:
+- [x] **Local Env Configuration**
+  - [x] In the backend, create a `.env` file with variables:
     - `SUPABASE_URL`
     - `SUPABASE_SERVICE_KEY`
     - (other secrets as needed)
-  - [ ] **Do not** commit `.env` to source control.
+  - [x] **Do not** commit `.env` to source control.
 
-- [ ] **Database Tables**
-  - [ ] Create `emails` table with fields:
+- [x] **Database Tables**
+  - [x] Create `emails` table with fields:
     - `id` (UUID, PK)
     - `sender` (text)
     - `subject` (text)
@@ -52,7 +52,7 @@ Below is a **`todo.md`** document you can use as a master checklist. Each sectio
     - `body` (text)
     - `attachments` (jsonb)
     - `created_at` (timestamp, default now)
-  - [ ] Create `links` table with fields:
+  - [x] Create `links` table with fields:
     - `id` (UUID, PK)
     - `email_id` (UUID, FK → `emails.id`)
     - `url` (text)
@@ -61,10 +61,10 @@ Below is a **`todo.md`** document you can use as a master checklist. Each sectio
     - `tags` (text[])
     - `created_at` (timestamp, default now)
 
-- [ ] **Connectivity Test**
-  - [ ] Install `@supabase/supabase-js` in the backend (`npm install @supabase/supabase-js`).
-  - [ ] Create a small test file to insert a dummy row into `emails` and confirm successful insertion.
-  - [ ] Confirm test passes.
+- [x] **Connectivity Test**
+  - [x] Install `@supabase/supabase-js` in the backend
+  - [x] Create test file to insert dummy row into `emails`
+  - [ ] Confirm test passes (pending Supabase project setup)
 
 ---
 

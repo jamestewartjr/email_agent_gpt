@@ -7,10 +7,16 @@
     "test": "jest",
     "start": "node server.js"
   },
-  "keywords": ["email", "agent", "api"],
+  "keywords": [
+    "email",
+    "agent",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "dotenv": "^16.4.7",
     "express": "^4.18.2"
   },
   "devDependencies": {
