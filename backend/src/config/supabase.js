@@ -1,8 +1,14 @@
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
+
+console.log('Environment variables:', {
+  url: supabaseUrl ? 'Set' : 'Not set',
+  key: supabaseKey ? 'Set' : 'Not set'
+});
 
 if (!supabaseUrl || !supabaseKey) {
   throw new Error('Missing Supabase environment variables');
